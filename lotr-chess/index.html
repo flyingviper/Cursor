@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LOTR Chess</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Lord of the Rings Chess</h1>
+      <div class="controls">
+        <button id="resetBtn" title="Reset to starting position">Reset</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="board-wrapper">
+        <div id="board" class="board" aria-label="Chessboard" role="grid"></div>
+        <div class="board-labels">
+          <div class="files" id="fileLabels"></div>
+          <div class="ranks" id="rankLabels"></div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="turn-status">
+            <span>Turn:</span>
+            <strong id="turnText">White (Fellowship)</strong>
+          </div>
+          <div class="game-status" id="gameStatus"></div>
+        </div>
+
+        <div class="panel captured-panel">
+          <h3>Captured</h3>
+          <div class="captured-lists">
+            <div>
+              <h4>By Black (Mordor)</h4>
+              <ul id="capturedWhite"></ul>
+            </div>
+            <div>
+              <h4>By White (Fellowship)</h4>
+              <ul id="capturedBlack"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel moves-panel">
+          <h3>Move Log</h3>
+          <ol id="moveLog" class="move-log"></ol>
+        </div>
+      </aside>
+    </main>
+
+    <div id="promotionOverlay" class="overlay hidden" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="promotionTitle">
+        <h3 id="promotionTitle">Choose Promotion</h3>
+        <div id="promotionChoices" class="promotion-choices"></div>
+        <button id="cancelPromotion" class="secondary">Cancel</button>
+      </div>
+    </div>
+
+    <!-- chess.js for legal move rules -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.13.4/chess.min.js" integrity="sha512-Tw8Tws0v4lcV7aRjX9n3M0kSQq5+kY3K7oSLm2Yo3DCLT0ib7s1MBfRqBE7QDMse5wRvtQpI2WQ9aFuyplb0FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
