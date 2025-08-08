@@ -1,0 +1,9 @@
+{
+  "name": "lotr-chess",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lord of the Rings themed chess game (static web app)",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
